@@ -14,8 +14,10 @@ public class Main {
 //        DemoMap map = new DemoMap();
 //        map.demo();
 
-        DemoSet set = new DemoSet();
-        set.demo();
+//        DemoSet set = new DemoSet();
+//        set.demo();
 
+            DemoCollections col = new DemoCollections();
+            col.demo();
     }
 }
