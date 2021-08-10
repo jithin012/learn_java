@@ -17,7 +17,11 @@ public class Main {
 //        DemoSet set = new DemoSet();
 //        set.demo();
 
-            DemoCollections col = new DemoCollections();
-            col.demo();
+//        DemoCollections col = new DemoCollections();
+//        col.demo();
+
+        Work homework = new Work();
+        homework.demo();
+
     }
 }
