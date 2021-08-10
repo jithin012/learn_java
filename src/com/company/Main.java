@@ -1,23 +1,23 @@
 package com.company;
 
 
-
 public class Main {
 
     public static void main(String[] args) {
-//        DemoList list = new DemoList();
-//        list.demo();
+        /*
+         * Prefer compile-time-error; Problem with type casting - JVM must test type casting at run-time
+         * Generics add stability to your code
+         * it makes most of the bugs and error to be detectable at compile time and not at run-time
+           reuse the same code with different input
+         * can avoid type casting
+         */
 
-//        DemoQueue queue = new DemoQueue();
-//        queue.demo();
+//        Generic type = new Generic();
+//        type.demo();
 
-//        DemoMap map = new DemoMap();
-//        map.demo();
+        GenericMethod method = new GenericMethod();
+        method.demo();
 
-//        DemoSet set = new DemoSet();
-//        set.demo();
 
-            DemoCollections col = new DemoCollections();
-            col.demo();
     }
 }
