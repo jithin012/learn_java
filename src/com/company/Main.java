@@ -1,47 +1,33 @@
 package com.company;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.Consumer;
+
 interface I {
-    default void show() {
-        System.out.println("I am interface 'i'");
-    }
-    static void demoStatic() {
-        System.out.println("Please don't call me via class instance. Since I am a static method on interface");
-    }
-}
-interface J {
-    default void show() {
-        System.out.println("I am interface 'j'");
-    }
+     void show(int i);
 }
 
-class A {
-    public void show() {
-        System.out.println("I am class 'A'");
-    }
-}
 
-class C extends A implements I {
-    // TODO
-}
-
-class B implements I, J {
-    @Override
-    public void show() {
-        J.super.show();
-        //I.super.show();
+class ConsImpl implements Consumer<Integer> {
+    public void accept(Integer i) {
+        System.out.println(i);
     }
 }
 public class Main {
 
     public static void main(String[] args) {
+        I i;
+        i = n -> System.out.println(n); // used instead of anonymous class
+        i.show(10000);
 
-        C c = new C();
-        c.show(); // "I am class 'A'" ie; Class has more power compare to interface called "Third Rule"
+        List<Integer> values = Arrays.asList(1, 2, 3, 4, 5);
 
+        Consumer<Integer> c = new ConsImpl();
+        values.forEach(c);
 
-        B b = new B();
-        b.show(); // we must define which default wants to call by @Override
+//        Consumer<Integer> lambda =  n -> System.out.println(n);
+        values.forEach(n -> System.out.println(n));
 
-        I.demoStatic();
     }
 }
