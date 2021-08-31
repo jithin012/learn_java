@@ -1,27 +1,24 @@
 package com.company;
 
-
+interface Test {
+	void show();
+}
 
 public class Main {
 
     public static void main(String[] args) {
-//        DemoList list = new DemoList();
-//        list.demo();
 
-//        DemoQueue queue = new DemoQueue();
-//        queue.demo();
+		DefaultMethod demoDefaultMethod = new DefaultMethod();
+		demoDefaultMethod.showDefaultMethod();
+		demoDefaultMethod.showOverridedMethod();
 
-//        DemoMap map = new DemoMap();
-//        map.demo();
-
-//        DemoSet set = new DemoSet();
-//        set.demo();
-
-//        DemoCollections col = new DemoCollections();
-//        col.demo();
-
-        Work homework = new Work();
-        homework.demo();
-
+		/** anonymous class implments interface */
+		Test anonymousClassInstance = new Test() {
+			@Override
+			public void show() {
+				System.out.println("Here is working of anonymous class with interface");
+			}
+		};
+		anonymousClassInstance.show();
     }
 }
